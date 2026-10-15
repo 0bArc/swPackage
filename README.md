@@ -6,27 +6,26 @@
 
 Family umbrella for the **sw** Luau tools used together in Roblox games.
 
-| Tool | Role | Branch |
-|---|---|---|
-| **swTASK** | Structured concurrency (jobs, scopes, flows, adapters) | [`swTASK`](https://github.com/0bArc/swPackage/tree/swTASK) |
-| **swNET** | Buffer-based typed networking | [`swNET`](https://github.com/0bArc/swPackage/tree/swNET) |
+| Tool | Role | On `main` | Branch |
+|---|---|---|---|
+| **swTASK** | Structured concurrency (jobs, scopes, flows, adapters) | [`swTASK/`](./swTASK) | [`swTASK`](https://github.com/0bArc/swPackage/tree/swTASK) |
+| **swNET** | Buffer-based typed networking | [`swNET/`](./swNET) | [`swNET`](https://github.com/0bArc/swPackage/tree/swNET) |
 
-This `main` branch is the landing page (readme + brand). Product source lives on the named branches above.
+`main` holds both packages as folders. Named branches mirror each package root for single-product clones. Branches share history with `main` (no orphan compare / merge noise).
 
-## Clone a product branch
-
-```bash
-git clone -b swTASK https://github.com/0bArc/swPackage.git swTASK
-git clone -b swNET https://github.com/0bArc/swPackage.git swNET
-```
-
-Or fetch both into one clone:
+## Clone everything
 
 ```bash
 git clone https://github.com/0bArc/swPackage.git
 cd swPackage
-git checkout swTASK
-git checkout swNET
+# use ./swTASK and ./swNET
+```
+
+## Clone one product (branch tip is that package root)
+
+```bash
+git clone -b swTASK --single-branch https://github.com/0bArc/swPackage.git swTASK
+git clone -b swNET --single-branch https://github.com/0bArc/swPackage.git swNET
 ```
 
 ## How they fit
@@ -34,7 +33,7 @@ git checkout swNET
 - **swNET** defines packets, batches remotes, encodes buffers.
 - **swTASK** runs game work as Jobs; attach packet listeners with `SwTask.swnet:on` so handlers stay on the job pool.
 
-Use them together or alone. Each branch has its own docs under `docs/`.
+Use them together or alone. Each package has docs under its own `docs/` folder.
 
 ## Brand
 
@@ -50,4 +49,4 @@ White mark on transparent PNG:
 
 ## License
 
-Product branches ship under MIT (see `LICENSE` on each branch).
+Each package ships under MIT (see `swTASK/LICENSE` and `swNET/LICENSE`).

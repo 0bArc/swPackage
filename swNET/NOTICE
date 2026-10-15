@@ -1,0 +1,11 @@
+swNET
+=====
+
+This project is an independently maintained networking stack for Roblox (Luau).
+Public name, remotes, module layout, and performance/correctness work are swNET.
+
+Third-party notice (MIT)
+------------------------
+Portions of the serialization approach derive from software originally released
+under the MIT License, Copyright 2023 ffrostfall. That license requires this
+notice be preserved. It does not imply endorsement or ongoing affiliation.
